@@ -1,0 +1,35 @@
+name: crafty
+
+services:
+    crafty:
+        container_name: crafty
+        image: arcadiatechnology/crafty-4:latest
+        restart: unless-stopped
+        environment:
+            TZ: America/Sao_Paulo
+        network_mode: bridge
+        ports:
+            - "8111:8443/tcp" # HTTPS
+            #- "8123:8123" # DYNMAP
+            - "19132:19132/udp" # BEDROCK
+            - "25500-25600:25500-25600" # SERV PORT RANGE
+        volumes:
+            - type: bind
+              source: /DATA/Documents/crafty/backups
+              target: /crafty/backups
+            - type: bind
+              source: /DATA/AppData/crafty/logs
+              target: /crafty/logs
+            - type: bind
+              source: /DATA/AppData/crafty/servers
+              target: /crafty/servers
+            - type: bind
+              source: /DATA/AppData/crafty/config
+              target: /crafty/app/config
+            - type: bind
+              source: /DATA/Documents/crafty/import
+              target: /crafty/import
+
+networks:
+    default:
+        name: crafty_network

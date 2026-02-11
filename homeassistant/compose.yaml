@@ -1,0 +1,30 @@
+name: homeassistant
+
+services:
+    homeassistant:
+        container_name: homeassistant
+        environment:
+            PGID: "1000"
+            PUID: "1000"
+            TZ: America/Sao_Paulo
+        hostname: homeassistant
+        image: homeassistant/home-assistant:stable
+        network_mode: host
+        privileged: true
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/homeassistant/config
+              target: /config
+            - type: bind
+              source: /etc/localtime
+              target: /etc/localtime
+              read_only: true
+            - type: bind
+              source: /run/dbus
+              target: /run/dbus
+              read_only: true
+
+networks:
+    default:
+        name: homeassistant_default

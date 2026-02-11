@@ -1,0 +1,32 @@
+name: jellyfin
+
+services:
+    jellyfin:
+        container_name: jellyfin
+        devices:
+            - /dev/dri:/dev/dri
+        environment:
+            DOCKER_MODS: linuxserver/mods:jellyfin-opencl-intel
+            PGID: "1000"
+            PUID: "1000"
+            TZ: America/Sao_Paulo
+        hostname: jellyfin
+        image: linuxserver/jellyfin:10.11.6
+        network_mode: bridge
+        ports:
+            - "8096:8096/tcp"
+            - "8920:8920/tcp"
+            - "7359:7359/udp"
+            - "1900:1900/udp"
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/jellyfin/config
+              target: /config
+            - type: bind
+              source: /DATA/Media
+              target: /Media
+
+networks:
+    default:
+        name: jellyfin_network

@@ -1,0 +1,171 @@
+name: mediastack
+
+services:
+    bazarr:
+        container_name: bazarr
+        environment:
+            PGID: "1000"
+            PUID: "1000"
+            TZ: America/Sao_Paulo
+        hostname: bazarr
+        image: linuxserver/bazarr:latest
+        ports:
+            - "6767:6767/tcp"
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/Media/Movies
+              target: /movies
+            - type: bind
+              source: /DATA/Media/TV Shows
+              target: /tv
+            - type: bind
+              source: /DATA/AppData/bazarr/config
+              target: /config
+        networks:
+            servarr:
+                ipv4_address: 172.10.0.2
+
+    lidarr:
+        container_name: lidarr
+        environment:
+            PGID: "1000"
+            PUID: "1000"
+            TZ: America/Sao_Paulo
+        hostname: lidarr
+        image: linuxserver/lidarr:latest
+        ports:
+            - "8686:8686/tcp"
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/lidarr/config
+              target: /config
+            - type: bind
+              source: /DATA/Media/Music
+              target: /music
+            - type: bind
+              source: /DATA/Downloads
+              target: /downloads
+        networks:
+            servarr:
+                ipv4_address: 172.10.0.3
+
+    prowlarr:
+        container_name: prowlarr
+        environment:
+            PGID: "1000"
+            PUID: "1000"
+            TZ: America/Sao_Paulo
+        hostname: prowlarr
+        image: linuxserver/prowlarr:latest
+        ports:
+            - "9696:9696/tcp"
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/prowlarr/config
+              target: /config
+        networks:
+            servarr:
+                ipv4_address: 172.10.0.4
+
+    radarr:
+        container_name: radarr
+        environment:
+            PGID: "1000"
+            PUID: "1000"
+            TZ: America/Sao_Paulo
+        hostname: radarr
+        image: linuxserver/radarr:latest
+        ports:
+            - "7878:7878/tcp"
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/radarr/config
+              target: /config
+            - type: bind
+              source: /DATA/Media/Movies
+              target: /movies
+            - type: bind
+              source: /DATA/Downloads
+              target: /downloads
+        networks:
+            servarr:
+                ipv4_address: 172.10.0.5
+
+    sonarr:
+        container_name: sonarr
+        environment:
+            PGID: "1000"
+            PUID: "1000"
+            TZ: America/Sao_Paulo
+        hostname: sonarr
+        image: linuxserver/sonarr:latest
+        ports:
+            - "8989:8989/tcp"
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/sonarr/config
+              target: /config
+            - type: bind
+              source: /DATA/Media/TV Shows
+              target: /tv
+            - type: bind
+              source: /DATA/Downloads
+              target: /downloads
+        networks:
+            servarr:
+                ipv4_address: 172.10.0.6
+
+    qbittorrent:
+        container_name: qbittorrent
+        deploy:
+            resources:
+                limits:
+                    cpus: "2.0"
+                    memory: 4g
+        environment:
+            TORRENTING_PORT: "65359"
+            WEBUI_PORT: "8181"
+            PGID: "1000"
+            PUID: "1000"
+            TZ: America/Sao_Paulo
+        image: linuxserver/qbittorrent:latest
+        network_mode: bridge
+        ports:
+            - "8181:8181/tcp"
+            - "65359:65359/tcp"
+            - "65359:65359/udp"
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/qbittorrent/config
+              target: /config
+            - type: bind
+              source: /DATA/Downloads
+              target: /downloads
+            - type: bind
+              source: /DATA/Downloads/radarr
+              target: /radarr
+            - type: bind
+              source: /DATA/Downloads/sonarr
+              target: /sonarr
+            - type: bind
+              source: /DATA/Downloads/manual
+              target: /manual
+        networks:
+            servarr:
+                ipv4_address: 172.10.0.7
+
+networks:
+    servarr:
+        name: servarr
+        driver: bridge
+        enable_ipv6: true
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.10.0.0/24

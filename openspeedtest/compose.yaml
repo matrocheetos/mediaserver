@@ -1,0 +1,15 @@
+name: openspeedtest
+
+services:
+    openspeedtest:
+        container_name: openspeedtest
+        hostname: openspeedtest
+        image: openspeedtest/latest
+        network_mode: bridge
+        ports:
+            - "3004:3000/tcp"
+        restart: unless-stopped
+
+networks:
+    default:
+        name: openspeedtest_network

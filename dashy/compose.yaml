@@ -1,0 +1,28 @@
+name: dashy
+
+services:
+    dashy:
+        container_name: dashy
+        image: lissy93/dashy:latest
+        environment:
+            NODE_ENV: production
+            PUID: "1000"
+            PGID: "1000"
+        network_mode: bridge
+        ports:
+            - "88:8080/tcp"
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/dashy/conf.yml
+              target: /app/user-data/conf.yml
+        healthcheck:
+            test: ['CMD', 'node', '/app/services/healthcheck']
+            interval: 1m30s
+            timeout: 10s
+            retries: 3
+            start_period: 40s
+
+networks:
+    default:
+        name: dashy_network
