@@ -134,7 +134,6 @@ services:
             PUID: "1000"
             TZ: America/Sao_Paulo
         image: linuxserver/qbittorrent:latest
-        network_mode: bridge
         ports:
             - "8181:8181/tcp"
             - "65359:65359/tcp"
