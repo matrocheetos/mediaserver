@@ -1,0 +1,24 @@
+name: pangolin-client-newt
+services:
+    newt:
+        image: fosrl/newt
+        container_name: newt
+        restart: unless-stopped
+        environment:
+            - PANGOLIN_ENDPOINT=${PANGOLIN_ENDPOINT}
+            - NEWT_ID=${NEWT_ID}
+            - NEWT_SECRET=${NEWT_SECRET}
+        networks:
+            newt_public:
+                ipv4_address: 10.5.1.100
+
+networks:
+    newt_public:
+        name: newt_public
+        driver: bridge
+        enable_ipv6: true
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.5.1.0/24
+                - subnet: fd25:5000:1000:1::/64
