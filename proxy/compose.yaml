@@ -12,6 +12,7 @@ services:
         networks:
             newt_public:
                 ipv4_address: 10.5.1.100
+                ipv6_address: fd25:5000:1000:1::100
 
     nginx-proxy-manager:
         container_name: nginx-proxy-manager
@@ -23,14 +24,13 @@ services:
             - "81:81/tcp"
         environment:
             TZ: "America/Sao_Paulo"
-            PUID: 1000
-            PGID: 1000
         volumes:
             - /DATA/AppData/nginx-proxy-manager/data:/data
             - /DATA/AppData/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
         networks:
             newt_public:
                 ipv4_address: 10.5.1.2
+                ipv6_address: fd25:5000:1000:1::2
 
 networks:
     newt_public:
