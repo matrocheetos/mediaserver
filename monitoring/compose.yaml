@@ -12,9 +12,13 @@ services:
         volumes:
             - /DATA/AppData/beszel/data:/beszel_data
             - /DATA/AppData/beszel/socket:/beszel_socket
+        networks:
+            newt_public:
+                ipv4_address: 10.5.1.4
+                ipv6_address: fd25:5000:1000:1::4
 
     beszel-agent:
-        image: henrygd/beszel-agent:latest
+        image: henrygd/beszel-agent:alpine
         container_name: beszel-agent
         depends_on:
             - beszel
@@ -30,3 +34,12 @@ services:
             HUB_URL: ${BESZEL_HUB_URL}
             TOKEN: ${BESZEL_TOKEN}
             KEY: "${BESZEL_KEY}"
+        cap_add:
+            - SYS_RAWIO
+        devices:
+            - /dev/sda:/dev/sda
+            - /dev/sdb:/dev/sdb
+
+networks:
+    newt_public:
+        external: true
