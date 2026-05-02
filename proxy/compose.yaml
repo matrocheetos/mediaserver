@@ -31,6 +31,9 @@ services:
             newt_public:
                 ipv4_address: 10.5.1.2
                 ipv6_address: fd25:5000:1000:1::2
+            newt_private:
+                ipv4_address: 10.5.100.2
+                ipv6_address: fd25:5000:1000:100::2
 
 networks:
     newt_public:
@@ -42,3 +45,12 @@ networks:
             config:
                 - subnet: 10.5.1.0/24
                 - subnet: fd25:5000:1000:1::/64
+    newt_private:
+        name: newt_private
+        driver: bridge
+        enable_ipv6: true
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.5.100.0/24
+                - subnet: fd25:5000:1000:100::/64
