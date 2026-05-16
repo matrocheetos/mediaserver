@@ -51,17 +51,19 @@ services:
         container_name: wg-easy
         image: ghcr.io/wg-easy/wg-easy:15
         ports:
-            - "51820:51820/udp"
-            - "51821:51821/tcp"
+            - "51821:51821/udp"
+            - "51880:51880/tcp"
         environment:
-            INSECURE: "true"
+            PORT: "51880"
+            INSECURE: "false"
             DISABLE_IPV6: "false"
             INIT_ENABLED: "true"
             INIT_USERNAME: ${WGUSER}
             INIT_PASSWORD: ${WGPASS}
             INIT_HOST: ${WGHOST}
-            INIT_PORT: "51820"
-            INIT_DNS: "10.30.0.53"
+            INIT_PORT: "51821"
+            INIT_DNS: "172.17.0.1,fd25:1000:1000::1,1.1.1.1,2606:4700:4700::1111"
+            INIT_ALLOWED_IPS: "0.0.0.0/0,::/0"
         volumes:
             - /DATA/AppData/wg-easy/wireguard:/etc/wireguard
             - /lib/modules:/lib/modules:ro
