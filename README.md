@@ -1,6 +1,6 @@
 <h1><p align="center">Mediaserver</p></h1>
 
-<h3><p align="center">Home Server Docker Compose Repository 🏠🐋</p></h3>
+<h3><p align="center">Home Server Docker Compose Repository</p></h3>
 
 ---
 
@@ -16,6 +16,7 @@
 <a href="./mediastack/compose.yaml"><img alt="Sonarr" src="https://img.shields.io/badge/Sonarr-white?logo=sonarr" /></a>
 <a href="./mediastack/compose.yaml"><img alt="qBittorrent" src="https://img.shields.io/badge/qBittorrent-white?logo=qbittorrent&logoColor=blue" /></a>
 <a href="./networking/compose.yaml"><img alt="Pi-hole" src="https://img.shields.io/badge/Pi--hole-white?logo=pihole&logoColor=%2396060C" /></a>
+<a href="./networking/compose.yaml"><img alt="Unbound" src="https://img.shields.io/badge/Unbound-white?logo=pihole&logoColor=black" /></a>
 <a href="./networking/compose.yaml"><img alt="WireGuard" src="https://img.shields.io/badge/WireGuard-white?logo=wireguard&logoColor=%2388171A" /></a>
 <a href="./openspeedtest/compose.yaml"><img alt="OpenSpeedTest" src="https://img.shields.io/badge/OpenSpeedTest-white?logo=speedtest&logoColor=%233da6ff" /></a>
 <a href="./portainer/compose.yaml"><img alt="Portainer" src="https://img.shields.io/badge/Portainer-white?logo=portainer" /></a>
@@ -45,6 +46,7 @@
 ### Networking 🌐
 
 - **Pi-hole**: A network-wide ad blocker that protects devices from tracking and unwanted content via DNS sinkholing.
+- **Unbound**: A validating, recursive, and caching DNS resolver to improve privacy and security of DNS queries.
 - **WireGuard**: A fast, modern, and secure VPN tunnel for remote access to the home network.
 - **OpenSpeedTest**: A self-hosted network speed testing tool to diagnose local network performance.
 
@@ -58,24 +60,25 @@
 - **Crafty**: A Minecraft server management tool with a web interface.
 - **Dashy**: A customizable dashboard for organizing and accessing home server web applications in one place.
 
-## Hardware & OS
+## Server Specifications
 
-### Server specs
+### Hardware
 
-- CPU: Intel i5-7200U
-- RAM: 16GB DDR4
-- Storage:
-  - 1TB SATA SSD
-  - 1TB HDD
-- Network:
-  - Gigabit Ethernet
-  - IPv4 and IPv6
+| Item | Home Server |  VPS |
+| --- | --- | --- |
+| CPU | Intel i5-7200U | 1 core / 2 threads (AMD EPYC 7551) |
+| RAM | 16GB DDR4 | 1GB DDR4 |
+| Storage | 1TB SATA SSD + 1TB HDD | 100GB HDD |
+| IP | CGNAT IPv4, static IPv6 | Static IPv4 and IPv6 |
+| Network | Gigabit Ethernet, 200 Mbps | 50 Mbps |
 
-### Server OS
+### OS & Software
 
-- Ubuntu 24.04 LTS
-- Docker Engine v29
-- BTRFS filesystem
-  - 100GB for OS and applications
-  - 1.7TB for media storage
-  - 4GB swap file
+| Item | Home Server |  VPS |
+| --- | --- | --- |
+| OS | Ubuntu Server 24.04 LTS | Ubuntu Server 24.04 LTS |
+| Docker | Docker Engine v29 | Docker Engine v29 |
+| Filesystem | BTRFS | ext4 |
+| OS and applications | 100GB | 100GB |
+| Media storage | 1.7TB | 100GB |
+| RAM Swap | 4GB | 2GB |

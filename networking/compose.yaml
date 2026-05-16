@@ -30,21 +30,22 @@ services:
                 ipv4_address: 10.5.100.53
                 ipv6_address: fd25:5000:1000:100::53
 
-    # unbound:
-    #   container_name: unbound
-    #   image: bigbeartechworld/big-bear-unbound:latest
-    #   ports:
-    #     - "5300:53/udp"
-    #     - "5300:53/tcp"
-    #   environment:
-    #     TZ: America/Sao_Paulo
-    #   volumes:
-    #    - /DATA/AppData/unbound/unbound.conf:/etc/unbound/unbound.conf:ro
-    #   restart: unless-stopped
-    #   networks:
-    #     dns:
-    #       ipv4_address: 172.20.0.130
-    #       ipv6_address: fd25:1000:1000:100::130
+    unbound:
+        container_name: unbound
+        image: bigbeartechworld/big-bear-unbound:latest
+        ports:
+            - "5300:53/udp"
+            - "5300:53/tcp"
+        environment:
+            TZ: America/Sao_Paulo
+        volumes:
+            - /DATA/AppData/unbound/unbound.conf:/etc/unbound/unbound.conf:ro
+            - /DATA/AppData/unbound/data:/var/lib/unbound
+        restart: unless-stopped
+        networks:
+            dns:
+                ipv4_address: 172.20.0.130
+                ipv6_address: fd25:1000:1000:100::130
 
     wg-easy:
         container_name: wg-easy
