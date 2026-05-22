@@ -13,6 +13,9 @@ services:
             newt_public:
                 ipv4_address: 10.5.1.100
                 ipv6_address: fd25:5000:1000:1::100
+            newt_private:
+                ipv4_address: 10.5.100.100
+                ipv6_address: fd25:5000:1000:100::100
 
     nginx-proxy-manager:
         container_name: nginx-proxy-manager
