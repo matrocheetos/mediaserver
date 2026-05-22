@@ -40,6 +40,21 @@ services:
             - /dev/sda:/dev/sda
             - /dev/sdb:/dev/sdb
 
+    uptime-kuma:
+        image: louislam/uptime-kuma:2
+        container_name: uptime-kuma
+        restart: unless-stopped
+        volumes:
+            - /DATA/AppData/uptime-kuma/data:/app/data
+        ports:
+            - "3001:3001"
+        networks:
+            newt_private:
+                ipv4_address: 10.5.100.5
+                ipv6_address: fd25:5000:1000:100::5
+
 networks:
     newt_public:
+        external: true
+    newt_private:
         external: true
