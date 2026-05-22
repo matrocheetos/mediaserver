@@ -24,6 +24,8 @@
 <a href="./proxy/compose.yaml"><img alt="NginxProxyManager" src="https://img.shields.io/badge/Nginx_Proxy_Manager-white?logo=nginxproxymanager" /></a>
 <a href="./monitoring/compose.yaml"><img alt="Beszel" src="https://img.shields.io/badge/Beszel-white?logo=docker&logoColor=lightgreen" /></a>
 <a href="./monitoring/compose.yaml"><img alt="Uptime Kuma" src="https://img.shields.io/badge/Uptime_Kuma-white?logo=uptimekuma" /></a>
+<a href="./monitoring/compose.yaml"><img alt="Apprise" src="https://img.shields.io/badge/Apprise-white?logo=docker&logoColor=darkblue" /></a>
+<a href="./monitoring/compose.yaml"><img alt="ntfy" src="https://img.shields.io/badge/ntfy-white?logo=ntfy&logoColor=%23317F6F" /></a>
 <a href="./crafty/compose.yaml"><img alt="Crafty" src="https://img.shields.io/badge/Crafty-white?logo=docker&logoColor=%232ccb99" /></a>
 <a href="./dashy/compose.yaml"><img alt="Dashy" src="https://img.shields.io/badge/Dashy-white?logo=docker&logoColor=%2305c4cf" /></a>
 </p>
@@ -34,6 +36,8 @@
 - **HomeAssistant**: An open-source home automation platform.
 - **Beszel**: Server monitoring with Docker stats, historical data, and alerts.
 - **Uptime Kuma**: A monitoring tool to keep track of the uptime and performance of services and applications.
+- **Apprise**: A notification routing library that standardizes notifications across multiple platforms and provides a single, consistent way to send notifications to alerting systems.
+- **ntfy**: A simple HTTP-based notification server and client with support for multiple platforms, including Android, iOS, and desktop.
 
 ### Media 🎬
 
