@@ -16,15 +16,15 @@ services:
             - /DATA/AppData/apprise/attach:/attach
         restart: unless-stopped
         healthcheck:
-            test:
-                [
-                "CMD-SHELL",
-                "curl -fsS http://172.17.0.1:2210/status >/dev/null || exit 1",
-                ]
+            test: [ "CMD-SHELL", "curl -fsS http://172.17.0.1:2210/status >/dev/null || exit 1" ]
             interval: 30s
             timeout: 5s
             retries: 3
             start_period: 20s
+        networks:
+            notify:
+                ipv4_address: 10.60.1.10
+                ipv6_address: fd25:6000:1000:1::10
 
     ntfy:
         image: binwiederhier/ntfy:latest
@@ -61,5 +61,14 @@ services:
                 ipv6_address: fd25:5000:1000:1::211
 
 networks:
+    notify:
+        name: notify
+        driver: bridge
+        enable_ipv6: true
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.60.1.0/24
+                - subnet: fd25:6000:1000:1::/64
     newt_public:
         external: true
