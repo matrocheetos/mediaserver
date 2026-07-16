@@ -7,6 +7,8 @@ services:
         volumes:
             - ${UPLOAD_LOCATION}:/data
             - /etc/localtime:/etc/localtime:ro
+        devices:
+            - /dev/dri:/dev/dri
         env_file:
             - stack.env
         ports:
