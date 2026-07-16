@@ -78,6 +78,7 @@ services:
             STORE_GEODATA: ${STORE_GEODATA:-true}
             DISTANCE_UNIT: ${DISTANCE_UNIT:-km}
             MIN_MINUTES_SPENT_IN_CITY: ${MIN_MINUTES_SPENT_IN_CITY:-30}
+            WEB_CONCURRENCY: ${WEB_CONCURRENCY:-1}
         logging:
             driver: "json-file"
             options:
