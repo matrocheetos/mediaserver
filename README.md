@@ -32,6 +32,7 @@
 <a href="./crafty/compose.yaml"><img alt="Crafty" src="https://img.shields.io/badge/Crafty-white?logo=docker&logoColor=%232ccb99" /></a>
 <a href="./dashy/compose.yaml"><img alt="Dashy" src="https://img.shields.io/badge/Dashy-white?logo=docker&logoColor=%2305c4cf" /></a>
 </p>
+
 ### Management 🛠️
 
 - **Portainer**: A lightweight service delivery platform for containerized applications that simplifies managing Docker environments.
@@ -86,7 +87,7 @@
 | IP | CGNAT IPv4, static IPv6 | Static IPv4 and IPv6 |
 | Network | Gigabit Ethernet, 200 Mbps | 50 Mbps |
 
-### OS & Software
+### OS & Config
 
 | Item | Home Server |  VPS |
 | --- | --- | --- |
