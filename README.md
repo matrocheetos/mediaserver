@@ -27,10 +27,13 @@
 <a href="./monitoring/compose.yaml"><img alt="Diun" src="https://img.shields.io/badge/Diun-white?logo=docker&logoColor=lightblue" /></a>
 <a href="./notify/compose.yaml"><img alt="Apprise" src="https://img.shields.io/badge/Apprise-white?logo=docker&logoColor=darkblue" /></a>
 <a href="./notify/compose.yaml"><img alt="ntfy" src="https://img.shields.io/badge/ntfy-white?logo=ntfy&logoColor=%23317F6F" /></a>
+<a href="./monitoring-web/compose.yaml"><img alt="ChangeDetection.io" src="https://img.shields.io/badge/ChangeDetection-white?logo=changedetection&logoColor=%2300c3a5" /></a>
+<a href="./monitoring-web/compose.yaml"><img alt="TelegramMonitor" src="https://img.shields.io/badge/Telegram_Monitor-white?logo=telegram&logoColor=%2326A5E4" /></a>
 <a href="./immich/compose.yaml"><img alt="Immich" src="https://img.shields.io/badge/Immich-white?logo=immich&logoColor=%234250AF" /></a>
 <a href="./dawarich/compose.yaml"><img alt="Dawarich" src="https://img.shields.io/badge/Dawarich-white?logo=openstreetmap&logoColor=%237EBC6F" /></a>
 <a href="./crafty/compose.yaml"><img alt="Crafty" src="https://img.shields.io/badge/Crafty-white?logo=docker&logoColor=%232ccb99" /></a>
 <a href="./dashy/compose.yaml"><img alt="Dashy" src="https://img.shields.io/badge/Dashy-white?logo=docker&logoColor=%2305c4cf" /></a>
+<a href="./monitoring-web/compose.yaml"><img alt="n8n" src="https://img.shields.io/badge/n8n-white?logo=n8n&logoColor=%23FF6C37" /></a>
 </p>
 
 ### Management 🛠️
@@ -45,6 +48,8 @@
 - **Diun**: A monitoring tool that checks for updates to Docker images and sends notifications when updates are available.
 - **Apprise**: A notification routing library that standardizes notifications across multiple platforms and provides a single, consistent way to send notifications to alerting systems.
 - **ntfy**: A simple HTTP-based notification server and client with support for multiple platforms, including Android, iOS, and desktop.
+- **ChangeDetection.io**: A website change detection and monitoring service that notifies you when pages change, assisted by a headless Chrome browser for dynamic pages.
+- [**TelegramMonitor**](https://github.com/matrocheetos/telegram-chat-to-webhook): A custom Python userbot that monitors selected Telegram chats or groups and forwards new messages to a webhook for automation (matrocheetos/telegram-chat-to-webhook).
 
 ### Media 🎬
 
@@ -74,6 +79,7 @@
 - **Dawarich**: A self-hosted location tracking and data visualization tool.
 - **Crafty**: A Minecraft server management tool with a web interface.
 - **Dashy**: A customizable dashboard for organizing and accessing home server web applications in one place.
+- **n8n**: A node-based workflow automation tool to connect systems, automate tasks and prototype custom solutions.
 
 ## Server Specifications
 
