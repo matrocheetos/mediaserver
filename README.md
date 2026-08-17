@@ -31,6 +31,7 @@
 <a href="./monitoring-web/compose.yaml"><img alt="TelegramMonitor" src="https://img.shields.io/badge/Telegram_Monitor-white?logo=telegram&logoColor=%2326A5E4" /></a>
 <a href="./immich/compose.yaml"><img alt="Immich" src="https://img.shields.io/badge/Immich-white?logo=immich&logoColor=%234250AF" /></a>
 <a href="./dawarich/compose.yaml"><img alt="Dawarich" src="https://img.shields.io/badge/Dawarich-white?logo=openstreetmap&logoColor=%237EBC6F" /></a>
+<a href="./owncloud/compose.yaml"><img alt="ownCloud" src="https://img.shields.io/badge/ownCloud-white?logo=owncloud&logoColor=%231f2d5a" /></a>
 <a href="./crafty/compose.yaml"><img alt="Crafty" src="https://img.shields.io/badge/Crafty-white?logo=docker&logoColor=%232ccb99" /></a>
 <a href="./dashy/compose.yaml"><img alt="Dashy" src="https://img.shields.io/badge/Dashy-white?logo=docker&logoColor=%2305c4cf" /></a>
 <a href="./monitoring-web/compose.yaml"><img alt="n8n" src="https://img.shields.io/badge/n8n-white?logo=n8n&logoColor=%23FF6C37" /></a>
@@ -77,6 +78,7 @@
 
 - **Immich**: A self-hosted photo and video management solution.
 - **Dawarich**: A self-hosted location tracking and data visualization tool.
+- **ownCloud Infinite Scale**: A high-performance, self-hosted file storage and synchronization platform.
 - **Crafty**: A Minecraft server management tool with a web interface.
 - **Dashy**: A customizable dashboard for organizing and accessing home server web applications in one place.
 - **n8n**: A node-based workflow automation tool to connect systems, automate tasks and prototype custom solutions.
