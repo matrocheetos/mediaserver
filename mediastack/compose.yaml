@@ -25,6 +25,9 @@ services:
         networks:
             servarr:
                 ipv4_address: 172.10.0.2
+            newt_private:
+                ipv4_address: 10.5.100.30
+                ipv6_address: fd25:5000:1000:100::30
 
     lidarr:
         container_name: lidarr
@@ -50,6 +53,9 @@ services:
         networks:
             servarr:
                 ipv4_address: 172.10.0.3
+            newt_private:
+                ipv4_address: 10.5.100.31
+                ipv6_address: fd25:5000:1000:100::31
 
     prowlarr:
         container_name: prowlarr
@@ -69,6 +75,9 @@ services:
         networks:
             servarr:
                 ipv4_address: 172.10.0.4
+            newt_private:
+                ipv4_address: 10.5.100.32
+                ipv6_address: fd25:5000:1000:100::32
 
     radarr:
         container_name: radarr
@@ -94,6 +103,9 @@ services:
         networks:
             servarr:
                 ipv4_address: 172.10.0.5
+            newt_private:
+                ipv4_address: 10.5.100.33
+                ipv6_address: fd25:5000:1000:100::33
 
     sonarr:
         container_name: sonarr
@@ -119,6 +131,9 @@ services:
         networks:
             servarr:
                 ipv4_address: 172.10.0.6
+            newt_private:
+                ipv4_address: 10.5.100.34
+                ipv6_address: fd25:5000:1000:100::34
 
     qbittorrent:
         container_name: qbittorrent
@@ -158,6 +173,9 @@ services:
         networks:
             servarr:
                 ipv4_address: 172.10.0.7
+            newt_private:
+                ipv4_address: 10.5.100.35
+                ipv6_address: fd25:5000:1000:100::35
 
 networks:
     servarr:
@@ -168,3 +186,5 @@ networks:
             driver: default
             config:
                 - subnet: 172.10.0.0/24
+    newt_private:
+        external: true
