@@ -1,22 +1,26 @@
 name: portainer
+
 services:
     portainer:
         container_name: portainer
         hostname: portainer
         image: portainer/portainer-ce:lts
-        network_mode: bridge
         ports:
-            - "8000:8000/tcp"
-            - "9001:9001/tcp"
-            - "9443:9443/tcp"
+            - 8000:8000/tcp
+            - 9443:9443/tcp
         restart: always
         volumes:
-            - type: bind
-              source: /DATA/AppData/portainer
-              target: /data
-            - type: bind
-              source: /var/run/docker.sock
-              target: /var/run/docker.sock
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /DATA/AppData/portainer:/data
+        networks:
+            portainer_network:
+            newt_private:
+                ipv4_address: 10.5.100.9
+                ipv6_address: fd25:5000:1000:100::9
+
 networks:
-    default:
+    portainer_network:
         name: portainer_network
+        driver: bridge
+    newt_private:
+        external: true

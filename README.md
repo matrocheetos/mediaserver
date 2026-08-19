@@ -20,9 +20,11 @@
 <a href="./networking/compose.yaml"><img alt="WireGuard" src="https://img.shields.io/badge/WireGuard-white?logo=wireguard&logoColor=%2388171A" /></a>
 <a href="./openspeedtest/compose.yaml"><img alt="OpenSpeedTest" src="https://img.shields.io/badge/OpenSpeedTest-white?logo=speedtest&logoColor=%233da6ff" /></a>
 <a href="./portainer/compose.yaml"><img alt="Portainer" src="https://img.shields.io/badge/Portainer-white?logo=portainer" /></a>
+<a href="./vps/portainer-agent/compose.yaml"><img alt="Portainer Edge Agent" src="https://img.shields.io/badge/Portainer_Edge_Agent-white?logo=portainer" /></a>
 <a href="./proxy/compose.yaml"><img alt="Newt" src="https://img.shields.io/badge/Newt-white?logo=pangolin" /></a>
 <a href="./proxy/compose.yaml"><img alt="NginxProxyManager" src="https://img.shields.io/badge/Nginx_Proxy_Manager-white?logo=nginxproxymanager" /></a>
 <a href="./monitoring/compose.yaml"><img alt="Beszel" src="https://img.shields.io/badge/Beszel-white?logo=docker&logoColor=lightgreen" /></a>
+<a href="./vps/beszel-agent/compose.yaml"><img alt="Beszel Agent" src="https://img.shields.io/badge/Beszel_Agent-white?logo=docker&logoColor=lightgreen" /></a>
 <a href="./monitoring/compose.yaml"><img alt="Uptime Kuma" src="https://img.shields.io/badge/Uptime_Kuma-white?logo=uptimekuma" /></a>
 <a href="./monitoring/compose.yaml"><img alt="Diun" src="https://img.shields.io/badge/Diun-white?logo=docker&logoColor=lightblue" /></a>
 <a href="./notify/compose.yaml"><img alt="Apprise" src="https://img.shields.io/badge/Apprise-white?logo=docker&logoColor=darkblue" /></a>
@@ -82,6 +84,11 @@
 - **Crafty**: A Minecraft server management tool with a web interface.
 - **Dashy**: A customizable dashboard for organizing and accessing home server web applications in one place.
 - **n8n**: A node-based workflow automation tool to connect systems, automate tasks and prototype custom solutions.
+
+### VPS ☁️
+
+- **Portainer Edge Agent**: A lightweight agent that establishes a secure reverse tunnel to the main Portainer instance for remote Docker environment management.
+- **Beszel Agent**: A lightweight monitoring agent that collects system metrics and Docker container stats, streaming them back to the main Beszel server.
 
 ## Server Specifications
 
