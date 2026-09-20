@@ -10,20 +10,17 @@ services:
             PGID: "1000"
             PUID: "1000"
             TZ: America/Sao_Paulo
+            JELLYFIN_PublishedServerUrl: ${JELLYFIN_URL}
         hostname: jellyfin
-        image: linuxserver/jellyfin:10.11.11
+        image: linuxserver/jellyfin:version-12.1ubu2604
         ports:
             - "8096:8096/tcp"
-            - "8920:8920/tcp"
             - "7359:7359/udp"
         restart: unless-stopped
         volumes:
-            - type: bind
-              source: /DATA/AppData/jellyfin/config
-              target: /config
-            - type: bind
-              source: /DATA/Media
-              target: /Media
+            - /DATA/AppData/jellyfin/config:/config
+            - /DATA/AppData/jellyfin/cache:/cache
+            - /DATA/Media:/Media
         networks:
             servarr:
                 ipv4_address: 172.10.0.20
