@@ -7,11 +7,9 @@ services:
         ports:
             - 53:53/tcp
             - 53:53/udp
-            - 8800:80/tcp
-            - 8443:443/tcp
         environment:
             TZ: America/Sao_Paulo
-            FTLCONF_webserver_port: '80o,[::]:80o,443os,[::]:443os'
+            FTLCONF_webserver_port: '10.5.100.53:80o,[fd25:5000:1000:100::53]:80o'
             FTLCONF_webserver_api_password: ${WEBPASS}
             FTLCONF_dns_listeningMode: all
         volumes:
@@ -33,9 +31,6 @@ services:
     unbound:
         container_name: unbound
         image: bigbeartechworld/big-bear-unbound:latest
-        ports:
-            - "5300:53/udp"
-            - "5300:53/tcp"
         environment:
             TZ: America/Sao_Paulo
         volumes:
