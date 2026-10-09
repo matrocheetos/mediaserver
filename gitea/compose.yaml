@@ -1,0 +1,26 @@
+name: gitea
+
+services:
+  gitea:
+    container_name: gitea
+    hostname: gitea
+    image: gitea/gitea:latest
+    restart: unless-stopped
+   # ports:
+   #  - "3022:3000"
+   #  - "222:22"
+    volumes:
+      - /DATA/AppData/gitea/data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    networks:
+      newt_public:
+        ipv4_address: 10.5.1.10
+        ipv6_address: fd25:5000:1000:1::10
+
+networks:
+  newt_public:
+    external: true
