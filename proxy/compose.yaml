@@ -25,6 +25,7 @@ services:
             - "80:80/tcp"
             - "443:443/tcp"
             - "81:81/tcp"
+            - "222:222/tcp"
         environment:
             TZ: "America/Sao_Paulo"
         volumes:

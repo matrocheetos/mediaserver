@@ -6,9 +6,9 @@ services:
     hostname: gitea
     image: gitea/gitea:latest
     restart: unless-stopped
-   # ports:
-   #  - "3022:3000"
-   #  - "222:22"
+    # ports:
+    #  - "3022:3000"
+    #  - "222:22"
     volumes:
       - /DATA/AppData/gitea/data:/data
       - /etc/timezone:/etc/timezone:ro
@@ -17,10 +17,50 @@ services:
       - USER_UID=1000
       - USER_GID=1000
     networks:
+      gitea_network:
       newt_public:
         ipv4_address: 10.5.1.10
         ipv6_address: fd25:5000:1000:1::10
 
+  gitea-mirror:
+    container_name: gitea-mirror
+    hostname: gitea-mirror
+    image: ghcr.io/raylabshq/gitea-mirror:latest
+    restart: unless-stopped
+    # ports:
+    #   - "4321:4321"
+    user: 1000:1000
+    volumes:
+      - /DATA/AppData/gitea-mirror/data:/app/data
+    environment:
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
+      - BETTER_AUTH_URL=${BETTER_AUTH_URL}
+      - PUBLIC_BETTER_AUTH_URL=${BETTER_AUTH_URL}
+      - BETTER_AUTH_TRUSTED_ORIGINS=${BETTER_AUTH_TRUSTED_ORIGINS}
+      - NODE_ENV=production
+      - DATABASE_URL=file:data/gitea-mirror.db
+      - HOST=0.0.0.0
+      - PORT=4321
+      - BASE_URL=/
+      - MIRROR_ISSUE_CONCURRENCY=1
+      - MIRROR_PULL_REQUEST_CONCURRENCY=1
+    healthcheck:
+      test: [ "CMD-SHELL", "BASE=\"${BASE_URL:-/}\"; if [ \"$${BASE}\" = \"/\" ]; then BASE=\"\"; else BASE=\"$${BASE%/}\"; fi; wget --no-verbose --tries=3 --spider \"http://localhost:4321$${BASE}/api/health\"" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+    networks:
+      gitea_network:
+      newt_private:
+        ipv4_address: 10.5.100.10
+        ipv6_address: fd25:5000:1000:100::10
+
 networks:
+  gitea_network:
+    name: gitea_network
+    driver: bridge
   newt_public:
+    external: true
+  newt_private:
     external: true
