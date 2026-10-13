@@ -5,11 +5,40 @@ services:
         container_name: openspeedtest
         hostname: openspeedtest
         image: openspeedtest/latest
-        network_mode: bridge
         ports:
             - "3004:3000/tcp"
         restart: unless-stopped
+        networks:
+            newt_private:
+                ipv4_address: 10.5.100.20
+                ipv6_address: fd25:5000:1000:100::20
+
+    openpacketloss:
+        container_name: openpacketloss
+        hostname: openpacketloss
+        image: openpacketloss/openpacketloss-server:latest
+        restart: unless-stopped
+        ports:
+            - "9000:80"
+            - "4000:4000/udp"
+            - "40000-40050:40000-40050/udp"
+        environment:
+            - PLATFORM_MODE=self
+            - PORT=8080
+            - STUN_PORT=4000
+            - NAT_1TO1_IP=${NAT_1TO1_IP}
+            - ICE_PORT_MIN=40000
+            - ICE_PORT_MAX=40050
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "10m"
+                max-file: "3"
+        networks:
+            newt_private:
+                ipv4_address: 10.5.100.21
+                ipv6_address: fd25:5000:1000:100::21
 
 networks:
-    default:
-        name: openspeedtest_network
+    newt_private:
+        external: true
