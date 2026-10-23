@@ -19,8 +19,12 @@
 <a href="./networking/compose.yaml"><img alt="Unbound" src="https://img.shields.io/badge/Unbound-white?logo=pihole&logoColor=black" /></a>
 <a href="./networking/compose.yaml"><img alt="WireGuard" src="https://img.shields.io/badge/WireGuard-white?logo=wireguard&logoColor=%2388171A" /></a>
 <a href="./openspeedtest/compose.yaml"><img alt="OpenSpeedTest" src="https://img.shields.io/badge/OpenSpeedTest-white?logo=speedtest&logoColor=%233da6ff" /></a>
+<a href="./openspeedtest/compose.yaml"><img alt="OpenPacketLoss" src="https://img.shields.io/badge/OpenPacketLoss-white?logo=speedtest&logoColor=%233da6ff" /></a>
 <a href="./portainer/compose.yaml"><img alt="Portainer" src="https://img.shields.io/badge/Portainer-white?logo=portainer" /></a>
 <a href="./vps/portainer-agent/compose.yaml"><img alt="Portainer Edge Agent" src="https://img.shields.io/badge/Portainer_Edge_Agent-white?logo=portainer" /></a>
+<a href="./vps/pangolin/compose.yaml"><img alt="Pangolin" src="https://img.shields.io/badge/Pangolin-white?logo=pangolin" /></a>
+<a href="./vps/pangolin/compose.yaml"><img alt="Gerbil" src="https://img.shields.io/badge/Gerbil-white?logo=pangolin" /></a>
+<a href="./vps/pangolin/compose.yaml"><img alt="Traefik" src="https://img.shields.io/badge/Traefik-white?logo=traefikproxy" /></a>
 <a href="./proxy/compose.yaml"><img alt="Newt" src="https://img.shields.io/badge/Newt-white?logo=pangolin" /></a>
 <a href="./proxy/compose.yaml"><img alt="NginxProxyManager" src="https://img.shields.io/badge/Nginx_Proxy_Manager-white?logo=nginxproxymanager" /></a>
 <a href="./monitoring/compose.yaml"><img alt="Beszel" src="https://img.shields.io/badge/Beszel-white?logo=docker&logoColor=lightgreen" /></a>
@@ -34,6 +38,8 @@
 <a href="./immich/compose.yaml"><img alt="Immich" src="https://img.shields.io/badge/Immich-white?logo=immich&logoColor=%234250AF" /></a>
 <a href="./dawarich/compose.yaml"><img alt="Dawarich" src="https://img.shields.io/badge/Dawarich-white?logo=openstreetmap&logoColor=%237EBC6F" /></a>
 <a href="./owncloud/compose.yaml"><img alt="ownCloud" src="https://img.shields.io/badge/ownCloud-white?logo=owncloud&logoColor=%231f2d5a" /></a>
+<a href="./gitea/compose.yaml"><img alt="Gitea" src="https://img.shields.io/badge/Gitea-white?logo=gitea" /></a>
+<a href="./gitea/compose.yaml"><img alt="Gitea Mirror" src="https://img.shields.io/badge/Gitea_Mirror-white?logo=gitea" /></a>
 <a href="./crafty/compose.yaml"><img alt="Crafty" src="https://img.shields.io/badge/Crafty-white?logo=docker&logoColor=%232ccb99" /></a>
 <a href="./dashy/compose.yaml"><img alt="Dashy" src="https://img.shields.io/badge/Dashy-white?logo=docker&logoColor=%2305c4cf" /></a>
 <a href="./monitoring-web/compose.yaml"><img alt="n8n" src="https://img.shields.io/badge/n8n-white?logo=n8n&logoColor=%23FF6C37" /></a>
@@ -70,6 +76,7 @@
 - **Unbound**: A validating, recursive, and caching DNS resolver to improve privacy and security of DNS queries.
 - **WireGuard**: A fast, modern, and secure VPN tunnel for remote access to the home network.
 - **OpenSpeedTest**: A self-hosted network speed testing tool to diagnose local network performance.
+- **OpenPacketLoss**: A self-hosted network diagnostic tool to measure real-time packet loss, latency, and jitter using WebRTC.
 
 ### Proxy 🔀
 
@@ -81,12 +88,17 @@
 - **Immich**: A self-hosted photo and video management solution.
 - **Dawarich**: A self-hosted location tracking and data visualization tool.
 - **ownCloud Infinite Scale**: A high-performance, self-hosted file storage and synchronization platform.
+- **Gitea**: A lightweight, self-hosted Git service for hosting repositories, code reviews, and project collaboration.
+- **Gitea Mirror**: A self-hosted service to automatically mirror and synchronize repositories, issues, and pull requests from GitHub and GitLab to Gitea.
 - **Crafty**: A Minecraft server management tool with a web interface.
 - **Dashy**: A customizable dashboard for organizing and accessing home server web applications in one place.
 - **n8n**: A node-based workflow automation tool to connect systems, automate tasks and prototype custom solutions.
 
 ### VPS ☁️
 
+- **Pangolin**: A reverse proxy and tunnel manager running on the VPS, routing external traffic through Gerbil and Traefik to private home server services via Newt.
+- **Gerbil**: A tunneling gateway and network manager for Pangolin that terminates WireGuard connections from Newt clients and routes traffic to Traefik.
+- **Traefik**: A modern reverse proxy and edge router that handles HTTP/HTTPS traffic, automated SSL certificates via Let's Encrypt, and routes requests to backend services.
 - **Portainer Edge Agent**: A lightweight agent that establishes a secure reverse tunnel to the main Portainer instance for remote Docker environment management.
 - **Beszel Agent**: A lightweight monitoring agent that collects system metrics and Docker container stats, streaming them back to the main Beszel server.
 
