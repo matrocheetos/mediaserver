@@ -12,7 +12,7 @@ services:
             TZ: America/Sao_Paulo
             JELLYFIN_PublishedServerUrl: ${JELLYFIN_URL}
         hostname: jellyfin
-        image: linuxserver/jellyfin:version-12.2ubu2604
+        image: linuxserver/jellyfin:version-12.4ubu2604
         ports:
             - "8096:8096/tcp"
             - "7359:7359/udp"
