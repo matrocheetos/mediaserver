@@ -9,6 +9,7 @@
 <p align="center">
 <a href="./homeassistant/compose.yaml"><img alt="HomeAssistant" src="https://img.shields.io/badge/Home_Assistant-white?logo=homeassistant" /></a>
 <a href="./jellyfin/compose.yaml"><img alt="Jellyfin" src="https://img.shields.io/badge/Jellyfin-white?logo=jellyfin&logoColor=%23a060c5" /></a>
+<a href="./mediastack/compose.yaml"><img alt="Dispatcharr" src="https://img.shields.io/badge/Dispatcharr-white?logo=docker&logoColor=%23FF5722" /></a>
 <a href="./mediastack/compose.yaml"><img alt="Bazarr" src="https://img.shields.io/badge/Bazarr-white?logo=linuxserver&logoColor=black" /></a>
 <a href="./mediastack/compose.yaml"><img alt="Lidarr" src="https://img.shields.io/badge/Lidarr-white?logo=linuxserver&logoColor=green" /></a>
 <a href="./mediastack/compose.yaml"><img alt="Prowlarr" src="https://img.shields.io/badge/Prowlarr-white?logo=linuxserver&logoColor=orange" /></a>
@@ -63,6 +64,7 @@
 ### Media 🎬
 
 - **Jellyfin**: A free software system to manage and stream media.
+- **Dispatcharr**: An IPTV, EPG, and VOD stream management and proxy platform to organize, filter, and integrate live TV streams into media centers like Jellyfin via HDHomeRun emulation.
 - **Radarr**: A movie collection manager.
 - **Sonarr**: A TV show collection manager.
 - **Lidarr**: A music collection manager.

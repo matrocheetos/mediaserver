@@ -177,6 +177,27 @@ services:
                 ipv4_address: 10.5.100.35
                 ipv6_address: fd25:5000:1000:100::35
 
+    dispatcharr:
+        container_name: dispatcharr
+        image: ghcr.io/dispatcharr/dispatcharr:latest
+        restart: unless-stopped
+        environment:
+            - DISPATCHARR_ENV=aio
+            - REDIS_HOST=localhost
+            - CELERY_BROKER_URL=redis://localhost:6379/0
+            - DISPATCHARR_LOG_LEVEL=info
+            - TZ=America/Sao_Paulo
+        ports:
+            - "9191:9191/tcp"
+        volumes:
+            - /DATA/AppData/dispatcharr/data:/data
+        networks:
+            servarr:
+                ipv4_address: 172.10.0.8
+            newt_private:
+                ipv4_address: 10.5.100.36
+                ipv6_address: fd25:5000:1000:100::36
+
 networks:
     servarr:
         name: servarr
