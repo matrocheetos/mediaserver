@@ -44,6 +44,8 @@
 <a href="./crafty/compose.yaml"><img alt="Crafty" src="https://img.shields.io/badge/Crafty-white?logo=docker&logoColor=%232ccb99" /></a>
 <a href="./dashy/compose.yaml"><img alt="Dashy" src="https://img.shields.io/badge/Dashy-white?logo=docker&logoColor=%2305c4cf" /></a>
 <a href="./monitoring-web/compose.yaml"><img alt="n8n" src="https://img.shields.io/badge/n8n-white?logo=n8n&logoColor=%23FF6C37" /></a>
+<a href="./memos/compose.yaml"><img alt="Memos" src="https://img.shields.io/badge/Memos-white?logo=docker&logoColor=%2314b8a6" /></a>
+<a href="./penpot/compose.yaml"><img alt="Penpot" src="https://img.shields.io/badge/Penpot-white?logo=penpot" /></a>
 </p>
 
 ### Management 🛠️
@@ -95,6 +97,8 @@
 - **Crafty**: A Minecraft server management tool with a web interface.
 - **Dashy**: A customizable dashboard for organizing and accessing home server web applications in one place.
 - **n8n**: A node-based workflow automation tool to connect systems, automate tasks and prototype custom solutions.
+- [**Memos**](https://usememos.com): A privacy-first, lightweight, self-hosted note-taking service.
+- [**Penpot**](https://penpot.app/): A web-based, open-source design and prototyping tool for cross-functional teams.
 
 ### VPS ☁️
 

@@ -1,0 +1,23 @@
+name: memos
+
+services:
+    memos:
+        container_name: memos
+        image: neosmemo/memos:stable
+        restart: unless-stopped
+        ports:
+            - "5230:5230"
+        volumes:
+            - /DATA/AppData/memos:/var/opt/memos
+        environment:
+            MEMOS_PORT: 5230
+            MEMOS_DRIVER: sqlite
+            MEMOS_INSTANCE_URL: ${MEMOS_INSTANCE_URL}
+        networks:
+            newt_public:
+                ipv4_address: 10.5.1.12
+                ipv6_address: fd25:5000:1000:1::12
+
+networks:
+    newt_public:
+        external: true
