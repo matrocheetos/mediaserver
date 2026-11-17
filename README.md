@@ -61,7 +61,8 @@
 - **Apprise**: A notification routing library that standardizes notifications across multiple platforms and provides a single, consistent way to send notifications to alerting systems.
 - **ntfy**: A simple HTTP-based notification server and client with support for multiple platforms, including Android, iOS, and desktop.
 - **ChangeDetection.io**: A website change detection and monitoring service that notifies you when pages change, assisted by a headless Chrome browser for dynamic pages.
-- [**TelegramMonitor**](https://github.com/matrocheetos/telegram-chat-to-webhook): A custom Python userbot that monitors selected Telegram chats or groups and forwards new messages to a webhook for automation (matrocheetos/telegram-chat-to-webhook).
+- [**TelegramMonitor**](https://github.com/matrocheetos/telegram-monitor): A Go daemon and REST API for real-time monitoring of Telegram channels and groups via MTProto, featuring in-memory multi-rule product matching, coupon extraction, and ntfy push notifications.
+- ~~[**TelegramChatToWebhook**](https://github.com/matrocheetos/telegram-chat-to-webhook): A custom Python userbot that monitors selected Telegram chats or groups and forwards new messages to a webhook for automation.~~
 
 ### Media 🎬
 
