@@ -191,6 +191,7 @@ services:
             - "9191:9191/tcp"
         volumes:
             - /DATA/AppData/dispatcharr/data:/data
+            - /DATA/Media/Xtream:/media
         networks:
             servarr:
                 ipv4_address: 172.10.0.8
