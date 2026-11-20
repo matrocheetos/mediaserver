@@ -46,6 +46,7 @@
 <a href="./monitoring-web/compose.yaml"><img alt="n8n" src="https://img.shields.io/badge/n8n-white?logo=n8n&logoColor=%23FF6C37" /></a>
 <a href="./memos/compose.yaml"><img alt="Memos" src="https://img.shields.io/badge/Memos-white?logo=docker&logoColor=%2314b8a6" /></a>
 <a href="./penpot/compose.yaml"><img alt="Penpot" src="https://img.shields.io/badge/Penpot-white?logo=penpot" /></a>
+<a href="./securo/compose.yaml"><img alt="Securo" src="https://img.shields.io/badge/Securo-white?logo=docker&logoColor=%236767e7" /></a>
 </p>
 
 ### Management 🛠️
@@ -100,6 +101,7 @@
 - **n8n**: A node-based workflow automation tool to connect systems, automate tasks and prototype custom solutions.
 - [**Memos**](https://usememos.com): A privacy-first, lightweight, self-hosted note-taking service.
 - [**Penpot**](https://penpot.app/): A web-based, open-source design and prototyping tool for cross-functional teams.
+- [**Securo**](https://usesecuro.com/): A privacy-first, open-source, self-hosted personal finance manager with bank sync, multi-currency tracking, budgeting, and optional AI agents.
 
 ### VPS ☁️
 
