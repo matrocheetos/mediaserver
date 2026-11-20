@@ -237,6 +237,12 @@ services:
         command: uvicorn mcp_server.main:app --host 0.0.0.0 --port 8765
         ports:
             - "${AGENTS_MCP_EXTERNAL_HOST_PORT:-127.0.0.1:8765}:8765"
+        networks:
+            securo:
+            securo_plugins:
+            newt_private:
+                ipv4_address: 10.5.100.12
+                ipv6_address: fd25:5000:1000:100::12
         deploy:
             resources:
                 limits:
