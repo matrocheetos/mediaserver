@@ -4,8 +4,6 @@ services:
     apprise:
         image: caronc/apprise:latest
         container_name: apprise
-        ports:
-            - "2210:8000"
         environment:
             TZ: "America/Sao_Paulo"
             APPRISE_STATEFUL_MODE: simple
@@ -16,7 +14,7 @@ services:
             - /DATA/AppData/apprise/attach:/attach
         restart: unless-stopped
         healthcheck:
-            test: [ "CMD-SHELL", "curl -fsS http://172.17.0.1:2210/status >/dev/null || exit 1" ]
+            test: [ "CMD-SHELL", "curl -fsS http://apprise:8000/status >/dev/null || exit 1" ]
             interval: 30s
             timeout: 5s
             retries: 3
@@ -25,6 +23,9 @@ services:
             notify:
                 ipv4_address: 10.60.1.10
                 ipv6_address: fd25:6000:1000:1::10
+            newt_private:
+                ipv4_address: 10.5.100.13
+                ipv6_address: fd25:5000:1000:100::13
 
     ntfy:
         image: binwiederhier/ntfy:latest
@@ -34,7 +35,7 @@ services:
         environment:
             TZ: "America/Sao_Paulo"
             NTFY_BASE_URL: ${NTFY_BASE_URL}
-            NTFY_LISTEN_HTTP: "10.5.1.211:80"
+            NTFY_LISTEN_HTTP: ":80"
             NTFY_CACHE_FILE: "/var/cache/ntfy/cache.db"
             NTFY_CACHE_DURATION: "24h"
             NTFY_BEHIND_PROXY: "true"
@@ -53,8 +54,6 @@ services:
         volumes:
             - /DATA/AppData/ntfy/cache:/var/cache/ntfy
             - /DATA/AppData/ntfy/config:/etc/ntfy
-        ports:
-            - 2211:80
         restart: unless-stopped
         init: true
         networks:
@@ -76,4 +75,6 @@ networks:
                 - subnet: 10.60.1.0/24
                 - subnet: fd25:6000:1000:1::/64
     newt_public:
+        external: true
+    newt_private:
         external: true
